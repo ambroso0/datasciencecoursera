@@ -23,19 +23,24 @@ contains test data of 9/30 volunteer test subjects being observed
 dataFeatures (10299 rows, 561 columns) is created by merging x_train and x_test using rbind() function
 dataActivity (10299 rows, 1 column) is created by merging y_train and y_test using rbind() function
 dataSubject (10299 rows, 1 column) is created by merging subject_train and subject_test using rbind() function
+
 3.1 Merge column to get the data frame Data for all data 
+
 dataCombine is cretaed by merging dataActivity and dataSubject using cbind() function
 Data (10299 rows, 563 column) is created by merging dataSubject, dataActivity and dataCombine using cbind() function
 
 4. Extracts only the measurements on the mean and standard deviation for each measurement
+
 Data (10299 rows, 88 columns) is created by subsetting Data, selecting only columns: subject, activity and the measurements on the mean and standard deviation (std) for each measurement
 
 5. Uses descriptive activity names to name the activities in the data set
+
 activityLabels <- activity_labels.txt : 6 rows, 2 columns
 List of activities performed when the corresponding measurements were taken and its codes (labels)
 Data$activity <- factorized the activity column in the Data dataset to replace it with the with corresponding activity taken from V2 column of the activitiesLabels variable
 
 6. Appropriately labels the data set with descriptive variable names
+
 code column in Data renamed into activities
 All start with character f in column’s name replaced by Frequency
 All start with character t in column’s name replaced by Time
@@ -52,8 +57,13 @@ Export Data2 into tidydata.txt file.
 Activity Labels
 
 WALKING (value 1): subject was walking during the test
+
 WALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test
+
 WALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test
+
 SITTING (value 4): subject was sitting during the test
+
 STANDING (value 5): subject was standing during the test
+
 LAYING (value 6): subject was laying down during the test
